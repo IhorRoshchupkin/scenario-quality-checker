@@ -1,0 +1,244 @@
+{
+  "title": "Stacja kontroli pojazdów",
+  "actors": [
+    "klient", "diagnosta"
+  ],
+  "sys actors": [
+    "system"
+  ],
+  "steps": [
+    {
+      "stepNum": 1,
+      "actor": "klient",
+      "content": [
+        "Klient parkuje na stacji"
+      ],
+      "substeps": [],
+      "returnPath": []
+    },
+    {
+      "stepNum": 2,
+      "actor": "klient",
+      "content": [
+        "Klient oddaje dowód rejestracyjny i kluczyki"
+      ],
+      "substeps": [],
+      "returnPath": []
+    },
+    {
+      "stepNum": 3,
+      "actor": "",
+      "content": [
+        "FOR EACH",
+        "element samochodu"
+      ],
+      "substeps": [
+        {
+          "stepNum": 1,
+          "actor": "diagnosta",
+          "content": [
+            "Diagnosta sprawdza działanie"
+          ],
+          "substeps": [],
+          "returnPath": []
+        },
+        {
+          "stepNum": 2,
+          "actor": "system",
+          "content": [
+            "System generuje raport"
+          ],
+          "substeps": [],
+          "returnPath": []
+        },
+        {
+          "stepNum": 3,
+          "actor": "",
+          "content": [
+            "IF",
+            "Działanie elementu jest prawidłowe"
+          ],
+          "substeps": [
+            {
+              "stepNum": 1,
+              "actor": "system",
+              "content": [
+                "System drukuje zaświadczenie o możliwości poruszania się pojazdem"
+              ],
+              "substeps": [],
+              "returnPath": []
+            }
+          ],
+          "returnPath": []
+        },
+        {
+          "stepNum": 4,
+          "actor": "",
+          "content": [
+            "IF",
+            "Usterka jest drobna"
+          ],
+          "substeps": [
+            {
+              "stepNum": 1,
+              "actor": "system",
+              "content": [
+                "System drukuje zaświadczenie tymczasowe na okres 14 dni"
+              ],
+              "substeps": [],
+              "returnPath": []
+            },
+            {
+              "stepNum": 2,
+              "actor": "diagnosta",
+              "content": [
+                "Diagnosta oddaje dowód rejestracyjny"
+              ],
+              "substeps": [],
+              "returnPath": []
+            },
+            {
+              "stepNum": 3,
+              "actor": "klient",
+              "content": [
+                "IF",
+                "Klient decyduje się naprawić samochód na miejscu"
+              ],
+              "substeps": [
+                {
+                  "stepNum": 1,
+                  "actor": "klient",
+                  "content": [
+                    "Klient zosawia samochód do naprawy"
+                  ],
+                  "substeps": [],
+                  "returnPath": []
+                },
+                {
+                  "stepNum": 2,
+                  "actor": "",
+                  "content": [
+                    "Po naprawie"
+                  ],
+                  "substeps": [],
+                  "returnPath": [
+                    3
+                  ]
+                }
+              ],
+              "returnPath": []
+            },
+            {
+              "stepNum": 4,
+              "actor": "",
+              "content": [
+                "ELSE"
+              ],
+              "substeps": [
+                {
+                  "stepNum": 1,
+                  "actor": "diagnosta",
+                  "content": [
+                    "Diagnosta oddaje dowód i kluczyki"
+                  ],
+                  "substeps": [],
+                  "returnPath": []
+                },
+                {
+                  "stepNum": 2,
+                  "actor": "klient",
+                  "content": [
+                    "Klient odjeżdża"
+                  ],
+                  "substeps": [],
+                  "returnPath": []
+                },
+                {
+                  "stepNum": 3,
+                  "actor": "klient",
+                  "content": [
+                    "Przed upływem 14 dni klient wraca do punktu 1"
+                  ],
+                  "substeps": [],
+                  "returnPath": [
+                    1
+                  ]
+                }
+              ],
+              "returnPath": []
+            },
+            {
+              "stepNum": 5,
+              "actor": "",
+              "content": [
+                "IF",
+                "Usterka poważna"
+              ],
+              "substeps": [
+                {
+                  "stepNum": 1,
+                  "actor": "diagnosta",
+                  "content": [
+                    "Diagnosta zatrzymuje dowód rejestracyjny"
+                  ],
+                  "substeps": [],
+                  "returnPath": []
+                },
+                {
+                  "stepNum": 2,
+                  "actor": "system",
+                  "content": [
+                    "System drukuje zaświadczenie o zakazie poruszania się pojazdem"
+                  ],
+                  "substeps": [],
+                  "returnPath": []
+                },
+                {
+                  "stepNum": 3,
+                  "actor": "klient",
+                  "content": [
+                    "Klient otrzymuje samochód na lawecie"
+                  ],
+                  "substeps": [],
+                  "returnPath": [
+                    1
+                  ]
+                }
+              ],
+              "returnPath": []
+            }
+          ],
+          "returnPath": []
+        }
+      ],
+      "returnPath": []
+    },
+    {
+      "stepNum": 4,
+      "actor": "diagnosta",
+      "content": [
+        "Diagnosta podbija dowód i kluczyki"
+      ],
+      "substeps": [],
+      "returnPath": []
+    },
+    {
+      "stepNum": 5,
+      "actor": "diagnosta",
+      "content": [
+        "Diagnosta oddaje dowód i kluczyki"
+      ],
+      "substeps": [],
+      "returnPath": []
+    },
+    {
+      "stepNum": 6,
+      "actor": "klient",
+      "content": [
+        "Klient odjeżdża"
+      ],
+      "substeps": [],
+      "returnPath": []
+    }
+  ]
+}
