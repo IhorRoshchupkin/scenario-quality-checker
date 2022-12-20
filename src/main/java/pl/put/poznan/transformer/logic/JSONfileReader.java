@@ -39,7 +39,7 @@ public class JSONfileReader
         String filepath = getFileFromResources(filename + ".json").getPath();
         String content = "";
         try {
-            content = new String ( Files.readAllBytes( Paths.get(filepath.replaceAll("!"," "))));
+            content = new String ( Files.readAllBytes( Paths.get(filepath.replaceAll("!",""))));
 
         }
         catch (IOException e) {
