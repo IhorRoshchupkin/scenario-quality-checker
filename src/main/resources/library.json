@@ -1,0 +1,132 @@
+{
+  "title": "Dodanie ksiązki",
+  "actors": [
+    "bibliotekarz"
+  ],
+  "sys actors": [
+    "system"
+  ],
+  "steps": [
+    {
+      "stepNum": 1,
+      "actor": "bibliotekarz",
+      "content": [
+        "Bibliotekarz wybiera opcje dodania nowej pozycji ksiązkowej"
+      ],
+      "substeps": [],
+      "returnPath": []
+    },
+    {
+      "stepNum": 2,
+      "actor": "system",
+      "content": [
+        "Wyświetla się formularz"
+      ],
+      "substeps": [],
+      "returnPath": []
+    },
+    {
+      "stepNum": 3,
+      "actor": "bibliotekarz",
+      "content": [
+        "Bibliotekarz podaje dane ksiązki"
+      ],
+      "substeps": [],
+      "returnPath": []
+    },
+    {
+      "stepNum": 4,
+      "actor": "",
+      "content": [
+        "IF",
+        "Bibliotekarz pragnie dodać egzemplarze książki"
+      ],
+      "substeps": [
+        {
+          "stepNum": 1,
+          "actor": "bibliotekarz",
+          "content": [
+            "Bibliotekarz wybiera opcję definiowania egzemplarzy"
+          ],
+          "substeps": [],
+          "returnPath": []
+        },
+        {
+          "stepNum": 2,
+          "actor": "system",
+          "content": [
+            "System prezentuje zdefiniowane egzemplarze"
+          ],
+          "substeps": [],
+          "returnPath": []
+        },
+        {
+          "stepNum": 3,
+          "actor": "",
+          "content": [
+            "FOR EACH",
+            "egzemplarz"
+          ],
+          "substeps": [
+            {
+              "stepNum": 1,
+              "actor": "bibliotekarz",
+              "content": [
+                "Bibliotekarz wybiera opcję dodania egzemplarza"
+              ],
+              "substeps": [],
+              "returnPath": []
+            },
+            {
+              "stepNum": 2,
+              "actor": "system",
+              "content": [
+                "System prosi o podanie danych egzemplarza"
+              ],
+              "substeps": [],
+              "returnPath": []
+            },
+            {
+              "stepNum": 3,
+              "actor": "bibliotekarz",
+              "content": [
+                "Bibliotekarz podaje dane egzemplarza i zatwierdza."
+              ],
+              "substeps": [],
+              "returnPath": []
+            },
+            {
+              "stepNum": 4,
+              "actor": "system",
+              "content": [
+                "System informuje o poprawnym dodaniu egzemplarza i prezentuje zaktualizowaną listę egzemplarzy."
+              ],
+              "substeps": [],
+              "returnPath": []
+            }
+          ],
+          "returnPath": []
+        }
+      ],
+      "returnPath": []
+    },
+    {
+      "stepNum": 6,
+      "actor": "bibliotekarz",
+      "content": [
+        "Bibliotekarz zatwierdza dodanie książki."
+      ],
+      "substeps": [],
+      "returnPath": []
+    },
+    {
+      "stepNum": 7,
+      "actor": "system",
+      "content": [
+        "System informuje o poprawnym dodaniu książki."
+      ],
+      "substeps": [],
+      "returnPath": []
+    }
+  ]
+}
