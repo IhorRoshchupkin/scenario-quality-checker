@@ -6,6 +6,8 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+
+
 /**
  * Klasa do otczytania pliku w formacie JSON oraz konwertowania w String
  *
@@ -52,7 +54,7 @@ public class JSONfileReader
         
         String content = "";
         try {
-            content = new String ( Files.readAllBytes( Paths.get(filepath.replaceAll("!",""))));
+            content = new String ( Files.readAllBytes( Paths.get(java.replaceAll("%20"," "))));
 
         }
         catch (IOException e) {
