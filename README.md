@@ -1,5 +1,6 @@
 # IOD-I42-ALPHA-SQC
-# scenario-quality-checker
+# scenario-quality-checker 
+Version v1.3 <br />
 aplikacja do analizy skryptów<br /><br />
 <br /><br />
 Notacja scenariuszy:<br />
@@ -28,4 +29,5 @@ Aktor systemowy: System<br />
 • System informuje o poprawnym dodaniu książki.
 
 ## Jak uruchomić naszą aplikację:
-Wpisać : "http://localhost:2264/{nazwa funkcji}/{nazwa json plika}"
+Wpisać : "http://localhost:2264/{nazwa funkcji}/{nazwa json plika}" <br />
+Plik JSON musi znajdować się w tym samym folderze, w którym znajduje się plik jar!
