@@ -36,7 +36,20 @@ public class JSONfileReader
      */
     public String toString(String filename)
     {
-        String filepath = getFileFromResources(filename + ".json").getPath();
+        File jar1 = new File(JSONfileReader.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        File jar2 = new File(JSONfileReader.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+
+        File jarDir = new File(JSONfileReader.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        jar1 = new File(jarDir.getParent());
+        jar2 = new File(jar1.getParent());
+        String java = jar2.getParent();
+        java = java.replace("file:\\","");
+
+
+        java = java+"\\"+filename+".json";
+        System.out.print(java);
+        
+        
         String content = "";
         try {
             content = new String ( Files.readAllBytes( Paths.get(filepath.replaceAll("!",""))));
